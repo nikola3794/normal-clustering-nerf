@@ -1,0 +1,54 @@
+################################################################################
+                        Office computer (Ubuntu)
+################################################################################
+conda create --name ENV_NAME python=3.8.5
+conda activate ENV_NAME
+cd REPO_DIR
+pip install --ignore-installed torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install -r requirements.txt
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu113
+pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+# Had to comment out some line for this to work: https://github.com/NVIDIA/apex/pull/323
+pip install plotly==5.10.0
+pip install imgviz
+pip install h5py
+pip install pandas
+# The line below needs to be called every time the cuda scripts are modified
+pip install models/csrc/
+pip install wandb
+
+
+################################################################################
+                            Cluster server
+################################################################################
+module load gcc/6.3.0 python_gpu/3.8.5 eth_proxy ninja cuda/11.3.1 pigz open3d/0.9.0
+PYTHONPATH=
+export PYTHONPATH
+source PATH_TO_PYTHON_VENV
+
+# Installation
+# upgrade pip
+python -m pip install --upgrade pip
+# torch
+pip install --ignore-installed torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+# torch-scatter 
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu113
+# tinycudann
+pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+# apex
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+# rest ( install from inside the repo)
+git clone https://github.com/kwea123/ngp_pl
+cd REPO_DIR
+pip install -r requirements.txt
+pip install plotly==5.10.0
+# The line below needs to be called every time the cuda scripts are modified
+pip install models/csrc/
+
+
+
