@@ -31,7 +31,13 @@ pip install models/csrc/
 # Data
 Under preparation...
 ### Hypersim
+1. Download all Hypersim scenes by using the script at ```code_root/datasets/hypersim_src/_utils/``` . Provide necessary arguments when calling the script. Please note that the argument args.contains is already hardcoded in main(), to download only files useful for this repo (each scene has many other accompanying files that are not used, and therefore not downloaded). If you want to download only a subset of scenes (e.g. only 20 scenes from split A), you need to modify the script. One way is to comment out the defined variable URLS = [..] and create a new one with desired scenes.
+2. After downloading, the dataset root should contain a folder for every scene ```d_root/scene``` (e.g. "d_root/ai_053_004"). Inside every scene's folder should be a folder ```d_root/scene/_detail``` and a folder ```d_root/scene/images```. Inside ```d_root/scene/images```, there should be ```d_root/scene/images/scene_cam_00_final_hdf5``` where images are stored as hdf5 files, as well as ```d_root/scene/images/scene_cam_00_geometry_hdf5``` where depth maps, normal maps and semantics are stored. Sometimes, a scene has multiple cameras, and there are cam_01, cam_02,... versions of these two folders, which will never be used because only the first camera trajectory is used.
+3. The following files contained in ```code_root/datasets/hypersim_src/metadata/``` should be copied to the Hypersim root ```d_root/```: ```hypersim_A_scenes.json```; ```hypersim_B_scenes.json```; ```hypersim_C_scenes.json```; ```all_scenes_metadata.json```; ```most_scenes_list.json```; ```scene_boundaries.json```; ```scene_semantic_classes.json```; ```metadata_camera_parameters.csv```.
+
 ### ScanNet
+1. Download prepared scenes available at this [repo](https://github.com/zju3dv/manhattan_sdf), and place them into the data root of the ScanNet dataset.
+   
 ### Replica
 
 # Train
