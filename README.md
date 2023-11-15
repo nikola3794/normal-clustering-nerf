@@ -30,6 +30,9 @@ pip install models/csrc/
 
 # Data
 Under preparation...
+### Hypersim
+### ScanNet
+### Replica
 
 # Train
 Under preparation...
