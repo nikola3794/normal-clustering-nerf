@@ -3,8 +3,6 @@ This repository contains the implementation of the method proposed in ICCV23 pap
 
 ![teaser](https://github.com/nikola3794/normal-clustering-nerf/blob/main/teaser.jpg)
 
-The documentation is currently under preparation...
-
 # Abstract
 Novel view synthesis and 3D modeling using implicit neural field representation are shown to be very effective for calibrated multi-view cameras. Such representations are known to benefit from additional geometric and semantic supervision. Most existing methods that exploit additional supervision require dense pixel-wise labels or localized scene priors. These methods cannot benefit from high-level vague scene priors provided in terms of scenes' descriptions. In this work, we aim to leverage the geometric prior of Manhattan scenes to improve the implicit neural radiance field representations. More precisely, we assume that only the knowledge of the indoor scene (under investigation) being Manhattan is known -- with no additional information whatsoever -- with an unknown Manhattan coordinate frame. Such high-level prior is used to self-supervise the surface normals derived explicitly in the implicit neural fields. Our modeling allows us to cluster the derived normals and exploit their orthogonality constraints for self-supervision. Our exhaustive experiments on datasets of diverse indoor scenes demonstrate the significant benefit of the proposed method over the established baselines.
 
@@ -29,3 +27,21 @@ pip install wandb
 # The line below needs to be called every time the cuda scripts are modified
 pip install models/csrc/
 ```
+
+# Data
+Under preparation...
+
+# Train
+Under preparation...
+
+# Evaluate
+Under preparation...
+
+# Code structure
+Under preparation...
+
+# Contact
+Under preparation...
+
+# Citation
+Under preparation...
