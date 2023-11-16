@@ -10,7 +10,7 @@ Novel view synthesis and 3D modeling using implicit neural field representation 
 ```
 conda create --name ENV_NAME python=3.8.5
 conda activate ENV_NAME
-cd REPO_DIR
+cd CODE_ROOT
 pip install --ignore-installed torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -r requirements.txt
 pip install torch-scatter -f https://data.pyg.org/whl/torch-1.11.0+cu113
