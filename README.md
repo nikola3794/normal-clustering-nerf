@@ -50,8 +50,8 @@ Running ```code_root/train_nerf.py``` will train a NeRF for the specified scene 
 # Contact
 Please feel free to reach out if there are any questions, suggestion or issues with the code. My e-mail is nipopovic@vision.ee.ethz.ch.
 
-# Code source
-This code is build on top of the [ngp_pl](https://github.com/kwea123/ngp_pl) repository.
+# Code starting point
+This code provided here is build on top of the excellent [ngp_pl](https://github.com/kwea123/ngp_pl) repository.
 
 # Citation
 If you use this code, please consider citing the following paper:
